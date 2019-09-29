@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Recycle by Composting</title>
+      <link rel="stylesheet" href="menustyle.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+<body>
+      <div class="wrapper">
+            <div class="hero-section">
+                  <h1>Composting</h1>
+
+                  <div class="menu-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+                  <div class="close-menu">
+                        <ion-icon name="close"></ion-icon>
+                  </div>
+
+                  <div class="nav">
+                        <ul class="main-menu">
+                              <li class="main-menu-item">
+                                    <a href="../main.html">Home</a>
+                              </li>
+
+                              <li class="main-menu-item">
+                                    <a href="#">Recycle &nbsp; <ion-icon name="add"></ion-icon></a>
+
+                                    <ul class="submenu">
+                                          <li id="vru1" class="submenu-item">
+                                                
+												
+												<a href="Recycling.html">Recycling Basics</a>
+												
+                                          </li>
+                                          <li id="vru2" class="submenu-item">
+                                                <a href="What to do with it.html">What to Do with</a>
+                                          </li>
+                                          <li id="vru3" class="submenu-item">
+                                                <a href="Reycling Knowledge.html">Recycling Knowledge</a>
+                                          </li>
+                                    </ul>
+                              </li>
+
+                              <li class="main-menu-item">
+                                    <a href="#">composting &nbsp; <ion-icon name="add"></ion-icon></a>
+
+                                    <ul class="submenu">
+                                          <li id="vru4"  class="submenu-item">
+                                                <a href="Compsting Basics.html">How it Works</a>
+                                          </li>
+                                          <li id="vru5" class="submenu-item">
+                                                <a href="small scale compsting.html">Small Scale Composting</a>
+                                          </li>
+                                          <li id="vru6"  class="submenu-item">
+                                                <a href="large Composting.html">Large Scale composting</a>
+                                          </li>
+                                          <li class="submenu-item">
+                                                <a href="#"></a>
+                                          </li>
+                                    </ul>
+                              </li>
+
+                              					  
+
+                              <li class="main-menu-item">
+                                    <a  href="The Product Shop.html">The product Shop &nbsp; <ion-icon name="add"></ion-icon></a>
+
+                                    <ul class="submenu">
+                                          <li id="vru7" class="submenu-item">
+                                                <a href="#">Open Shop</a>
+                                          </li>
+                                          <li class="submenu-item">
+                                                <a href="#"></a>
+                                          </li>
+										  
+										  <li class="submenu-item">
+                                                <a href="#"></a>
+                                          </li>
+                                    </ul>
+                              </li>
+                        </ul>
+                  </div>
+
+                  <div class="contact">
+                        <p class="call"><ion-icon name="call"></ion-icon>&nbsp;&nbsp;&nbsp;9011622145</p>
+                        <p class="mail"><ion-icon name="mail"></ion-icon>&nbsp;&nbsp;&nbsp;sksahu2097@gmail.com</p>
+                  </div>
+
+                  <div class="media">
+                        <ul>
+						
+							  <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+                              
+ 					  </ul>
+                  </div>
+            </div>
+      </div>
+      <script type="text/javascript">
+	  
+		$("#vru1").click(function(){
+		
+			window.location.assign("Recycling.html");
+		
+		});
+		
+		$("#vru2").click(function(){
+		
+			window.location.assign("What to do with it.html");
+		
+		});
+		$("#vru3").click(function(){
+		
+			window.location.assign("Reycling Knowledge.html");
+		
+		});
+		$("#vru4").click(function(){
+		
+			window.location.assign("Compsting Basics.html");
+		
+		});
+		$("#vru5").click(function(){
+		
+			window.location.assign("small scale compsting.html");
+		
+		});
+		$("#vru6").click(function(){
+		
+			window.location.assign("large Composting.html");
+		
+		});
+		$("#vru7").click(function(){
+		
+			window.location.assign("The Product Shop.html");
+		
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  
+            $('ul.main-menu li').click(function(e) {
+                  e.preventDefault();
+
+                  if($(this).siblings('li').find('ul.submenu:visible').length) {
+                        $('ul.submenu').slideUp('normal');
+                  }
+                  $(this).find('ul.submenu').slideToggle('normal');
+            });
+
+            var t1 = new TimelineMax({paused: true});
+
+            t1.to(".menu", 0.8, {
+                  autoAlpha: 1
+            });
+
+            t1.staggerFrom(".main-menu li a:not(.submenu li a)", 1, {
+                  opacity: 0,
+                  y: 10,
+                  ease: Power3.easeInOut
+            }, 0.1);
+
+            t1.from(".submenu", 0.8, {
+                  autoAlpha: 0
+            });
+
+            t1.staggerFrom(".media ul li", 1, {
+                  opacity: 0,
+                  y: 10,
+                  ease: Power3.easeInOut
+            }, 0.1, "-=2");
+
+            t1.from(".call", 1, {
+                  delay: -2,
+                  opacity: 0,
+                  y: 10,
+                  ease: Power3.easeInOut
+            });
+
+            t1.from(".mail", 1, {
+                  delay: -1.6,
+                  opacity: 0,
+                  y: 10,
+                  ease: Power3.easeInOut
+            });
+
+            t1.reverse();
+
+            $(document).on("click", ".menu-btn", function() {
+                  t1.reversed(!t1.reversed());
+            });
+
+            $(document).on("click", ".close-menu", function() {
+                  t1.reversed(!t1.reversed());
+            });
+
+      </script>
+</body>
+</html>

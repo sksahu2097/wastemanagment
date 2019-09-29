@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Sub-sub menu 1.3</title>
+      <link rel="stylesheet" href="Recycling Knowledge style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+</head>
+<body>
+      <div class="slide active">
+            <div class="card">
+                  <div class="card-img" id="img13"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling  Knowledge</p>
+                        <h2 class="card-header">RECYCLE FOREVER AND FOREVER RECYCLED!</h2>
+                        <p class="card-para">Do you remember the first item you recycled? Maybe not, but there's a good chance it could have been either a glass wine bottle, a jam jar, a fizzy drink can or a baked bean tin.<br>
+											In the UK alone, we use over half a million tonnes of metal packaging and nearly 2 million tonnes of glass packaging per year. Thanks to your efforts, a lot is being recycled but there's still a lot more to do.<br><br>
+											Currently, we recycle an estimated:<br>
+											75% of steel packaging;<br>
+											60% of glass packaging; and<br>
+											50% of aluminium packaging. <br>
+																						
+											
+											
+											
+											</p>
+                 
+				  <a href="Reycling Knowledge.html">Back<ion-icon name="arrow-round-forward"></ion-icon></a>
+
+                  </div>
+            </div>
+      </div>
+      <div class="slide">
+            <div class="card">
+                  <div class="card-img" id="img14"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling Knowledge</p>
+                        <h2 class="card-header">RECYCLE FOREVER AND FOREVER RECYCLED!</h2>
+                        <p class="card-para">Not bad you may think, but that's still 25% of steel packaging such as dog food tins and baked beans
+											cans that aren't making it to the recycling bin; 40% of glass bottles and jars being thrown into landfill and 50% of aluminium 
+											drinks cans, foil trays and deodorant cans missing their opportunity to become something new. By simply remembering to rinse and 
+											recycle all these items, we can make a big difference. To find out what you can recycle locally, check our handy Recycling Locator.<br>
+														
+									
+									</p>
+                  
+                  </div>
+            </div>
+      </div>
+      <div class="slide">
+            <div class="card">
+                  <div class="card-img" id="img40"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling  Knowledges</p>
+                        <h2 class="card-header">Good to know facts</h2>
+                        <p class="card-para">Both metal and glass can be recycled again and again without loss of quality;<br>
+											Around 95% less energy is used to make products from recycled materials than using raw materials;<br>
+											If we recycle all the steel packaging we use in a year, it would save enough energy to make over 50,000 returns train journeys between London and Edinburgh! <br>
+											We currently save enough energy from recycling glass to chill 34 bottles of wine each day for every UK household!<br>
+											Recycling one drinks can could save enough energy to power a TV for four hours.<br>
+										</p>
+                 
+				  
+				  <a href="Reycling Knowledge.html">Back<ion-icon name="arrow-round-forward"></ion-icon></a>
+                  </div>
+            </div>
+      </div>
+	  
+	  
+	  
+	  
+	  
+	  
+      <div class="prevnext">
+            <button class="pn-btn" id="prev"></button>
+            <button class="pn-btn" id="next"></button>
+      </div>
+      <script type="text/javascript">
+
+      var $activeSlide = $('.active'),
+      $homeSlide = $(".slide"),
+      $slideNavPrev = $("#prev"),
+      $slideNavNext = $("#next");
+
+      function init() {
+            TweenMax.set($homeSlide.not($activeSlide), {autoAlpha: 0});
+            TweenMax.set($slideNavPrev, {autoAlpha: 0.2});
+      }
+
+      init();
+
+      function goToNextSlide(slideOut, slideIn, slideInAll) {
+            var t1 = new TimelineLite(),
+            slideOutContent = slideOut.find('.card-content'),
+            slideInContent = slideIn.find('.card-content'),
+            slideOutImg = slideOut.find('.card-img'),
+            slideInImg = slideIn.find('.card-img'),
+            index = slideIn.index(),
+            size = $homeSlide.length;
+            console.log(index);
+
+            if(slideIn.length !== 0) {
+            t1
+            .set(slideIn, {autoAlpha: 1, className: '+=active'})
+            .set(slideOut, {className: '-=active'})
+            .to(slideOutContent, 0.65, {y: "+=40px", ease: Power3.easeInOut}, 0)
+            .to(slideOutImg, 0.65, {backgroundPosition :'bottom', ease: Power3.easeInOut}, 0)
+            .to(slideInAll, 1, {y: "-=100%", ease: Power3.easeInOut}, 0)
+            .fromTo(slideInContent, 0.65, {y: '-=40px'}, {y : 0, ease: Power3.easeInOut}, "-=0.7")
+            .fromTo(slideInImg, 0.65, {backgroundPosition: 'top'}, {backgroundPosition: 'bottom', ease: Power3.easeInOut}, '-=0.7')
+            }
+
+            TweenMax.set($slideNavPrev, {autoAlpha: 1});
+
+            if(index === size - 1){
+                  TweenMax.to($slideNavNext, 0.3, {autoAlpha: 0.2, ease:Linear.easeNone});
+            }
+      };
+
+      $slideNavNext.click(function(e) {
+            e.preventDefault();
+
+            var slideOut = $('.slide.active'),
+            slideIn = $('.slide.active').next('.slide'),
+            slideInAll = $('.slide');
+
+            goToNextSlide(slideOut, slideIn, slideInAll);
+
+      });
+
+      function goToPrevSlide(slideOut, slideIn, slideInAll) {
+            var t1 = new TimelineLite(),
+            slideOutContent = slideOut.find('.card-content'),
+            slideInContent = slideIn.find('.card-content'),
+            slideOutImg = slideOut.find('.card-img'),
+            slideInImg = slideIn.find('.card-img'),
+            index = slideIn.index(),
+            size = $homeSlide.length;
+
+            if(slideIn.length !== 0) {
+            t1
+            .set(slideIn, {autoAlpha: 1, className: '+=active'})
+            .set(slideOut, {className: '-=active'})
+            .to(slideOutContent, 0.65, {y: "-=40px", ease: Power3.easeInOut}, 0)
+            .to(slideOutImg, 0.65, {backgroundPosition :'top', ease: Power3.easeInOut}, 0)
+            .to(slideInAll, 1, {y: "+=100%", ease: Power3.easeInOut}, 0)
+            .fromTo(slideInContent, 0.65, {y: '+=40px'}, {y : 0, ease: Power3.easeInOut}, "-=0.7")
+            .fromTo(slideInImg, 0.65, {backgroundPosition: 'bottom'}, {backgroundPosition: 'top', ease: Power3.easeInOut}, '-=0.7')
+            }
+
+            TweenMax.set($slideNavPrev, {autoAlpha: 1});
+
+            if(index === 0){
+                  TweenMax.to($slideNavPrev, 0.3, {autoAlpha: 0.2, ease:Linear.easeNone});
+            }
+      };
+
+      $slideNavPrev.click(function(e) {
+            e.preventDefault();
+
+            var slideOut = $('.slide.active'),
+            slideIn = $('.slide.active').prev('.slide'),
+            slideInAll = $('.slide');
+
+            goToPrevSlide(slideOut, slideIn, slideInAll);
+      
+      });
+
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>SIGNUP</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+      
+      <script type="text/javascript">
+          
+          
+          function validate(){
+              var input = document.getElementById("pwd");
+              var text = document.getElementById("text");
+              input.addEventListener("keyup", function(event) {
+                                     
+                                     if (event.getModifierState("CapsLock")) {
+                                     text.style.display = "block";
+                                     document.getElementById('text').innerHTML=" warning ! Caps lock is ON ";
+                                     validate1();
+                                     } else {
+                                     text.style.display = "none"
+                                     }
+                                     });
+                                     
+                                     
+                                     
+          }
+      function validate1(){
+          
+          var input = document.getElementById("pwd").value;
+          var pattern=/^[a-zA-Z0-9\s]+$/;
+          if(input.match(pattern)){
+              
+              document.getElementById('passwordcheck').innerHTML="";
+              validate();
+              return true;
+              
+          }else{
+              
+              document.getElementById('passwordcheck').innerHTML="Enter only alphanumeric password!!";
+              
+              return false;
+              
+          }
+          
+          
+      }
+      
+      function check(){
+          
+          var output;
+          var role1;
+          var user_name=document.getElementById("usr").value;
+          var password=document.getElementById("pwd").value;
+          
+          if(document.getElementById("role2").checked){
+              
+              role1=document.getElementById("role2").value;
+              
+          }else if(document.getElementById("role3").checked){
+              
+              role1=document.getElementById("role3").value;
+              
+          }
+          
+          //alert(""+role1);
+          if(window.XMLHttpRequest){
+              
+              var xmlhttp=new XMLHttpRequest();
+              
+          }else{
+              
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              
+          }
+          
+          xmlhttp.open("GET","login.php?u1="+user_name+"&p1="+password+"&r1="+role1,false);
+          
+          xmlhttp.onreadystatechange=function(){
+              
+              if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                  //alert("hii2");
+                  output=xmlhttp.responseText;
+                  //alert(output);
+                  
+                  if(output.charAt(0)=='I'){
+                      
+                      alert("wrong details : ");
+                      //window.location.assign("login1.html")
+                      
+                      return false;
+                      
+                  }else{
+                      document.cookie="username="+user_name;
+                      var res=role1.localeCompare("ri");
+                      
+                      if(res==0){
+                          
+                          window.location.assign("dashboard/riderDashboard.html");
+                          
+                      }else{
+                          
+                          window.location.assign("customerPage.html");
+                          
+                      }
+                      
+                      return true;
+                      
+                  }
+                  
+              }
+              
+          }
+          
+          xmlhttp.send();
+          
+          
+      }
+      
+      function signup1(){
+          
+          window.location.assign("signup/signup.html")
+          
+      }
+      
+      
+      
+      
+      function disableClick(){
+          document.onmousedown=function(event){
+              if (event.button == 2) {
+                  alert('Right Click Message');
+                  location.replace('index.html');
+                  return false;
+              }
+          }
+      }
+      </script>
+      
+      
+      
+      
+</head>
+<body onload="disableClick();">
+      <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                        <h1>Registration Form</h1>
+                        
+                        
+                        <div id="login1">
+                            <font color="white">ENTER THE USER NAME</font>
+                            <input type="text" id="usr" name="usr" style="height:20px; width:150px;" maxlength=10 /></br></br>
+                            <font color="white">ENTER THE PASSWORD&nbsp;&nbsp;</font>
+                            <input type="password" id="pwd" name="pwd" style="height:20px; width:150px;" maxlength=20 onkeyup="validate1()"/></br></br>
+                            <font color="white">Select Role</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="role" id="role2" value="ri" />&nbsp;&nbsp;<font color="white">Rider</font>&nbsp;&nbsp;
+                            <input type="radio" name="role" id="role3" value="cu" />&nbsp;&nbsp;<font color="white">Customer</font></br></br>
+                            <p id="text" style="color:red;"></p>
+                            <p id="passwordcheck" style="color:red;"></p>
+                            <table>
+                                <tr>
+                                    <td><button style="margin-left:40px;" onclick="check()">login</button></td>
+                                    
+                                    <td><input type="button" style="margin-left:70px;" value="signup" onclick="signup1();"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                       
+                        
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                    <span id="order">01. </span>
+                                    <span id="menu">&nbsp;Home /</span>
+                                    <span id="tag">intro</span>
+                              </li>
+                              <li class="menu-item-2">
+                                    <span id="order">02. </span>
+                                    <span id="menu">&nbsp;Our Story /</span>
+                                    <span id="tag">the building</span>
+                              </li>
+                              <li class="menu-item-3">
+                                    <span id="order">03. </span>
+                                    <span id="menu">&nbsp;Portfolio /</span>
+                                    <span id="tag">work we've done</span>
+                              </li>
+                              <li class="menu-item-4">
+                                    <span id="order">04. </span>
+                                    <span id="menu">&nbsp;Thesis /</span>
+                                    <span id="tag">the pursuit</span>
+                              </li>
+                              <li class="menu-item-5">
+                                    <span id="order">05. </span>
+                                    <span id="menu">&nbsp;Contact /</span>
+                                    <span id="tag">say hello</span>
+                              </li>
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+      
+      
+      
+      
+
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+            }, function() {
+                  $(".bg1").fadeOut(800);
+                window.location.replace("../index.html");
+
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "45%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 2, {
+            width: "45%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+
+      </script>
+</body>
+</html>

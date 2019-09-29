@@ -1,0 +1,281 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Waste food management system </title>
+     <link rel="stylesheet" href="SR_master_style.css">
+	 <link rel="stylesheet" href="srProduct.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="jquery.vide.js"></script>
+	 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	  
+	 
+</head>
+<body >
+        <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                       <!-- <h1>Waste food management system</h1>-->
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+						<span class="bg bg6 hide"></span>
+
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                  
+                                    <id="menu">&nbsp;Home </span>										
+                                  
+                              </li>
+							  
+							  <li class="menu-item-2">
+                                  
+                                    <id="menu">&nbsp;Source Reduction</span>										
+                                  
+                              </li>
+							  							   
+                              <li class="menu-item-3">
+                                  
+                                    <span id="menu">&nbsp;Zero Waste Lifestyle</span>
+                                  
+                              </li>
+                              <li class="menu-item-4">
+                                  
+                                    <span id="menu">&nbsp;Product</span>
+									
+                                  
+                              </li>
+                             
+                              <li class="menu-item-5">
+                                   
+                                    <span id="menu">&nbsp;Contact us </span>
+                                  
+                              </li>
+							  
+									
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+							   
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+			
+ 	
+      </div>
+	 
+	 
+	  
+	 
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+               
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+				  
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+			$(".menu-item-6").hover(function() {
+                  $(".bg6").fadeIn(800);
+            }, function() {
+                  $(".bg6").fadeOut(800);
+                  window.location.replace("ourTeamPage/index.html");
+
+            })
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "50%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 6, {
+            width: "60%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+	  
+	  /*$(".toggle-btn").click(function(){
+                              
+                              cont1.style.display='none';
+                              cont2.style.display='none';
+                              cont3.style.display='none';
+                              cont4.style.display='none';
+                              });
+	*/
+	</script>
+	
+	 <div class="sr_hrader">
+	  <h1 align="right">&nbsp;&nbsp;&nbsp; Source Reduction:</h1>
+      </div>
+	  
+	  <div class="content1">
+	    <br>
+		<h2 align="center">Product</h2>
+	  
+	  </div>
+		
+	  <div>
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;Some waste food product: </h2>
+	  </div>
+	
+    <div class="cont1" id="cont1">  
+	  <div class="leftblock1">
+		<p>This video watch how to recyle waste food and there uses.In home food recyler </p>
+		<p>Food scrap composting can now be done in the conveniece of your home.</p>
+		<p>The Zara food recyler turns today's meals into tomorrow's fertilizer.</p>
+		<p>It is eliminates the buildup of rotting food scraps around the Kintchen.</p>
+		<p>In this machine the whole process takes only 24 hours to complete.</p>
+		<p>The recyler shreds the scraps into small pieces.Then a special plant additive speeds up the process, creating nutrient-rich mulch.</p>
+	  </div>
+	  	  
+	  <div class="rightblock1">
+		<video width="470px" height="300px"  controls >
+					<source src="SR_Pv001.mp4" type="video/mp4">
+		</video>
+		
+	  </div>
+	</div>
+	
+	 <div class="cont1" id="cont2">  
+	  <div class="leftblock2">
+		<video width="470px" height="300px"  controls >
+					<source src="SR_Pv002.mp4" type="video/mp4">
+		</video>	
+	  </div>
+	  
+	  <div class="rightblock2">  
+	 	<p>This video is related to waste fruits and vegetables without wasting there are many products makes and suply in the market. likes: learn to preserve,eat the skin,blend it up</p>
+	  </div>
+	</div>  
+	
+	<div class="cont1" id="cont3">  
+	  <div class="leftblock1">
+		<p>In this video going to see how to make compost out from your kitchen waste.</p>
+	  </div>
+	  	  
+	  <div class="rightblock1">
+		<video width="470px" height="300px"  controls >
+					<source src="SR_Pv004.mp4" type="video/mp4">
+		</video>
+		
+	  </div>
+	</div>
+
+	<h2>&nbsp;&nbsp;&nbsp;&nbsp; Examples of some waste foods videos by which we can help the poor:</h2>
+	
+	<div class="container1" id="cont4">	
+	  <div class="block">
+		<video width="370px" height="230px"  controls >
+					<source src="SR_Pv007.mp4" type="video/mp4">
+				</video>
+	  </div>
+	  
+	  <div class="block">
+		<video width="370px" height="230px"  controls >
+					<source src="SR_Pv005.mp4" type="video/mp4">
+				</video>
+	  </div>
+	  
+	  <div class="block">
+	    <video width="370px" height="230px"  controls >
+					<source src="SR_Pv006.mp4" type="video/mp4">
+				</video>
+	  </div>
+	  
+	  
+	</div>  
+	  <footer class="srfooter">
+		<br>
+			<p>Contect: 9090909061/8080808061</p>
+			<p>E-mail: rkvagot@gmail.com</p>
+			
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>							   
+                        </ul>
+						<br>
+                       
+		</footer>
+
+</body>
+</html>

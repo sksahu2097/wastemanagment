@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="author" content="harrnish - ig@harrnish">
+      <link rel="icon" href="yourIconUrl" type="image/gif" sizes="16x16">
+      <title>Small Scale Composting</title>
+
+      <!-- external stylesheet -->
+      <link rel="stylesheet" href="Small style.css">
+
+      <!-- bootstrapcdn -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <!-- icon pack -->
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+      <!-- google font -->
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+      <!-- jquery cdn -->
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+      <!-- tweenmax (greensock) cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+      <!-- for on scroll animations -->
+      <link rel="stylesheet" href="Small animate.css">
+      <script src="wow.min.js"></script>
+</head>
+<body>
+      <div class="about-container">
+
+            <!-- NAVIGATION STARTS -->
+
+            <div class="nav">
+                  <div class="menu-open">
+                        
+                  </div>
+                  <div class="brand">
+                        <span><a href="menu.html">small Scale Composting</a></span>
+                  </div>
+                  <div class="cart">
+                        <ion-icon name="cart"></ion-icon>
+                  </div>
+                  <div class="menu">
+                        <div class="menu-close">
+                              <ion-icon name="close"></ion-icon>
+                        </div>
+                       
+                        <div class="media-menu">
+                              <ul>
+                                    <li><ion-icon name="logo-facebook"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter"></ion-icon></li>
+                                    <li><ion-icon name="logo-pinterest"></ion-icon></li>
+                              </ul>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- NAVIGATION ENDS -->
+
+            <!-- DATA SECTION STARTS -->
+
+            <div class="about-hero">
+                  <div class="container-fluid hero wow fadeInUp">
+                        <h1 id="hero-title">Small Scale Compsting</h1>
+                  </div>
+
+                  <div class="container content">
+                        <p class="wow fadeInUp" data-wow-delay="0.5s"><br><br></p>
+						
+						
+						                        <p id="blockquote" class="wow fadeInUp" data-wow-delay="0.1s">Small Scale or Backyard Composting</p>
+
+                        <p class="wow fadeInUp" data-wow-delay="0.7s">	A significant fraction of the solid waste generated in the United States is organic material 
+																		that can be recycled through small scale composting. There are many advantages to this strategy 
+																		of waste management. Households, businesses and institutions may save money by composting items 
+																		such as food scraps and yard trimmings while sending less waste to landfills and incinerators. 
+																		In addition, small scale composting is often the most environmentally sound way of recycling 
+																		organic materials. The finished compost is a good soil amendment for a variety of gardening 
+																		and landscape uses.
+																		
+																		
+																	</p>
+
+												<p id="blockquote" class="wow fadeInUp" data-wow-delay="0.1s">FOIL</p>
+                    
+
+						<p class="wow fadeInUp" data-wow-delay="0.7s">Health Considerations. Health concerns relating to compost are dependent both on the individual and 
+																	on the material being composted. Dog and cat manures can contain harmful pathogens and should be avoided.	
+																	While few human pathogenic organisms are found in vegetative wastes, normal sanitary measures 
+																	(i.e., washing hands before touching food, eyes, etc.) are important. <br><br>
+																	Although most people are 
+																	unlikely to have any problems, there are a few concerns which place some individuals at risk.
+																		Just as individuals vary in their resistance to disease, a few individuals may be particularly 
+																		sensitive to some of the organisms in compost. The high populations of many different species 
+																		of molds and fungi in an active compost process can cause allergic responses in some people, 
+																		though most experience no adverse reaction. One of these fungal species, Aspergillus fumigatus, 
+																		can infect the respiratory system of a sensitive person who is heavily exposed. <br><br>
+																		Conditions that 
+																		may predispose individuals to infection or an allergic response include: a weakened immune system, 
+																		allergies, asthma, some medications such as antibiotics and adrenal cortical hormones, or a punctured
+																		eardrum. People with these conditions should avoid turning compost piles or take precautions to minimize exposure.
+																		To minimize these potential risks, common OSHA approved dust masks can be worn under dry and dusty conditions, 
+																		especially when the compost is being turned. If, following these precautions, individuals still develop an infection
+																		or have an allergic reaction to compost, they should consult a medical professional.<br>
+																																			</p>
+                  
+				  
+							  	  
+				  
+				  
+				  </div>
+            </div>
+
+            <!-- DATA SECTION ENDS -->
+
+           
+            </div>
+
+            <script type="text/javascript">
+
+            //Scroll reveal animations
+
+            new WOW().init();
+
+            //Scroll activated background change
+            $(function() {
+                  $(document).scroll(function() {
+                        var $nav = $(".nav");
+                        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                  });
+            });
+
+            //Toggle MENU
+
+            var t1 = new TimelineMax({paused: true});
+            t1.to(".menu", 0.5, {
+                  left: "0%",
+                  ease: Power2.easeInOut
+            });
+
+            t1.reverse();
+            $(document).on("click", ".menu-open", function() {
+                  t1.reversed(!t1.reversed());
+            });
+            $(document).on("click", ".menu-close", function() {
+                  t1.reversed(!t1.reversed());
+            });
+
+            </script>
+</body>
+</html>

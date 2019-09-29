@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>SIGNUP</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+      
+      <script type="text/javascript">
+          
+          
+          function disableClick(){
+              document.onmousedown=function(event){
+                  if (event.button == 2) {
+                      alert('this function is not allowed');
+                      return false;
+                  }
+              }
+          }
+      
+      
+      
+      function checkName(){
+          
+          var ch=/^[A-za-z]+[\s]+[A-Za-z]+$/;
+          if(document.getElementById("name1").value.match(ch)){
+              
+              chk.style.display='none';
+              
+          }else{
+              
+              chk.style.display='block';
+              //alert("wrong name");
+              document.getElementById("name1").focus();
+              
+          }
+          
+      }
+      
+      
+      
+    function checkMno(){
+          
+          chk1.style.display='none';
+          var mno=document.getElementById("mno").value;
+          var pmno = /^\d{10}$/;
+          if(mno.match(pmno)){
+              
+              chk2.style.display='none';
+              
+          }else{
+              chk2.style.display='block';
+              document.getElementById("chk2").innerHTML="invalid mobile no";
+              document.getElementById("mno").focus;
+              
+          }
+          
+      }
+      
+      
+          </script>
+      
+      
+      
+</head>
+<body onload="disableClick();">
+      <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                        <h1>Registration Form</h1>
+                        </br></br>
+                        <div id="reg">
+
+                        <table >
+                            
+                            <tr>
+                                <td>Enter The Name</td>
+                                <td><input type="text" id="name1" size="20" placeholder="Enter Name" onblur="checkName();"/></td>
+                                <td><li id="chk" style="display:none;">Please enter only alphabets</li></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Enter The user id</td>
+                                <td><input type="text" id="userid" size="20" placeholder="Enter user-id"/></td>
+                                <td><li id="chk1" style="display:none"> </li></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter The Password</td>
+                                <td><input type="password" id="pwd" size="20" placeholder="Enter Password"/></td>
+                                <td><li id="chk4" style="display:none"> </li></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter the Mobile no</td>
+                                <td><input type="text" id="mno" size="20" placeholder="Mobile no" onblur="checkMno();"/></td>
+                                <td><li id="chk2" style="display:none"> </li></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter the Address </td>
+                                <td><textarea id="address" placeholder="address"></textarea></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter the district</td>
+                                <td><input type="text" id="dist" placeholder="Enter the district"/>
+                                    
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter the state</td>
+                                <td><input type="text" id="state" placeholder="Enter the state"/>
+                                    
+                            </tr>
+                            
+                            <tr>
+                                <td>Enter the landmark</td>
+                                <td><input type="text" id="landmark" placeholder="Enter the landmark"/>
+                                    
+                            </tr>
+                            
+                            
+                            
+                            <tr>
+                                <td>Enter the pincode</td>
+                                <td><input type="text" id="pincode" placeholder="Enter the pincode"/>
+                                    
+                            </tr>
+                            
+                        </table>
+                        
+                        Choose Role :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="role" id="role2" value="hotel"/>&nbsp;&nbsp;<font color="white">Hotel</font>&nbsp;&nbsp;
+                        <input type="radio" name="role" id="role3" value="residential"/>&nbsp;&nbsp;<font color="white">Residential</font></br></br>
+                        
+                        </br></br>
+                        <input type="button" value="signup" id="signup" style="margin-left:200px" onclick="verifyRider();"/>
+                        
+                  </div>
+                        
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                    <span id="order">01. </span>
+                                    <span id="menu">&nbsp;Home /</span>
+                                    <span id="tag">intro</span>
+                              </li>
+                              <li class="menu-item-2">
+                                    <span id="order">02. </span>
+                                    <span id="menu">&nbsp;Our Story /</span>
+                                    <span id="tag">Aim</span>
+                              </li>
+                              <li class="menu-item-3">
+                                    <span id="order">03. </span>
+                                    <span id="menu">&nbsp;Login/</span>
+                                    <span id="tag">welcome</span>
+                              </li>
+                              
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+      
+      
+      
+      
+
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            
+             
+             $(".menu-item-1").click(function(){
+                                     
+                                     window.location.assign("../../donorHome.html");
+                                     
+                                     });
+             
+             $("#userid").blur(function(){
+                               
+                               var usr=document.getElementById("userid").value;
+                               chk1.style.display='block';
+                               $.ajax({url: "checkavailability.php?u1="+usr, success: function(result){
+                                      //var $response=$(result);
+                                      if(jQuery.trim(result)=="Valid"){
+                                      
+                                      document.getElementById("chk1").innerHTML="user id already taken";
+                                      document.getElementById("userid").focus();
+                                      
+                                      }else{
+                                      
+                                      document.getElementById("chk1").innerHTML="user id available";
+                                      
+                                      }
+                                      }});
+                               
+                               });
+             
+             
+             $("#signup").click(function(){
+                               
+                                var role;
+                                if(document.getElementById("role2").checked){
+                                
+                                role="hotel";
+                                
+                                }else{
+                                
+                                role="resident"
+                                
+                                }
+                                
+                                var name=document.getElementById("name1").value;
+                                var usr=document.getElementById("userid").value;
+                                var mno=document.getElementById("mno").value;
+                                var addr=document.getElementById("address").value;
+                                var pwd=document.getElementById("pwd").value;
+                                var dist=document.getElementById("dist").value;
+                                var st=document.getElementById("state").value;
+                                var land=document.getElementById("landmark").value;
+                                var pin=document.getElementById("pincode").value;
+                                
+                               $.ajax({url: "donorSignup.php?name="+name+"&usr="+usr+"&mno="+mno+"&addr="+addr+"&role="+role+"&pwd="+pwd+"&dist="+dist+"&st="+st+"&land="+land+"&pin="+pin, success: function(result){
+
+                                      window.location.assign("donorSignup.html");
+                                      
+                                      }});
+                               
+                               });
+             
+             
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "45%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 2, {
+            width: "45%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+
+      </script>
+</body>
+</html>

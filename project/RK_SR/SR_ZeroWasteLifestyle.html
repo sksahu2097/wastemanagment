@@ -1,0 +1,262 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Waste food management system </title>
+     <link rel="stylesheet" href="SR_master_style.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="jquery.vide.js"></script>
+	 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	  
+	 
+</head>
+<body >
+        <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                       <!-- <h1>Waste food management system</h1>-->
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+						<span class="bg bg6 hide"></span>
+
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                  
+                                    <id="menu">&nbsp;Home </span>										
+                                  
+                              </li>
+							  
+							  <li class="menu-item-2">
+                                  
+                                    <id="menu">&nbsp;Source Reduction</span>										
+                                  
+                              </li>
+							  							   
+                              <li class="menu-item-3">
+                                  
+                                    <span id="menu">&nbsp;Zero Waste Lifestyle</span>
+                                  
+                              </li>
+                              <li class="menu-item-4">
+                                  
+                                    <span id="menu">&nbsp;Product</span>
+                                  
+                              </li>
+                             
+                              <li class="menu-item-5">
+                                   
+                                    <span id="menu">&nbsp;Contact us </span>
+                                  
+                              </li>
+							  
+									
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+							   
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+			
+ 	
+      </div>
+	 
+	 
+	  
+	 
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+                  window.location.replace("SourceReduction.html");
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+			$(".menu-item-6").hover(function() {
+                  $(".bg6").fadeIn(800);
+            }, function() {
+                  $(".bg6").fadeOut(800);
+                  window.location.replace("ourTeamPage/index.html");
+
+            })
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "50%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 6, {
+            width: "60%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+	  
+	</script>
+	
+	 <div class="sr_hrader">
+	  <h1 align="right">&nbsp;&nbsp;&nbsp; Source Reduction:</h1>
+      </div>
+	  
+	  <div class="content">
+	    <br>
+		<h2 align="center">Zero waste lifeStyle</h2>
+	  <br>
+	  <p>Zero Waste is a set of principles focused on waste prevention that encourages the redesign of resource life cycles so that all products are reused.
+	     The goal is  for no trash  to be  sent to landfills, incinerators, or the ocean. Currently, only 9%  of  plastic is actually recycled. The process
+		 recommended is one similar to the way that resources are reused in nature.
+		</p><p>
+		we’re reminded of ways to reduce our ecological footprint and live less wastefully.
+		But these values shouldn't be relegated to a single day – every day should be Earth Day! At Clean Eating,
+		we believe in doing our part by composting food scraps, using eco-friendly shopping bags, bringing reusable cutlery and glass 
+		containers to work and recycling waste materials. But what if you were able to take it even further and live almost entirely waste-free? 
+		Or fit three years’ worth of your garbage into one single Mason jar? If it sounds impossible, just ask 24-year-old environmental studies 
+		graduate Lauren Singer how she does it. 
+		</p>
+		<br>
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; How do you reduce waste while you’re eating out at a restaurant?</h4>
+		<p>
+			I always choose restaurants that align with my ethos – restaurants that source sustainable produce, restaurants that compost, 
+			restaurants that won’t have plastic straws. I think that always saying “no” to straws in your drinks is a big one. Use a reusable 
+			napkin and reusable serveware. And bring your own containers for leftovers – I love airtight stainless steel containers.
+		</p>
+		<br>
+		<link src="https://possector.com/management/restaurant-food-waste-reduction">
+	  
+	  </div>
+		
+	  <div class="content">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;1. Waste food Tracking</h3>	
+			<P>
+				The Food Waste Tracker constitutes a preventive solution for professional kitchens, restaurants and supermarkets in order to reduce
+				their food waste by increasing the awareness of the kitchen staff and consequently allowing a reduction of the costs. Food Waste Tracker
+				consists of a scale and a touch screen with a built-in computer. The user simply selects the item to be disposed of on the touch screen 
+				and puts it on the scale. Food Waste Tracker then automatically shows the value of the item to be thrown away,the time it takes to cook
+				it, the energy consumption and the CO2 emissions.
+			</p>
+	  </div>
+	  
+	  <div class="content">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;2. Meal Planning</h3>	
+			<p>
+			How many times have you gone to the shop, thought about what you want to cook for dinner, and then bought the ingredients only to find half of them at home already?
+
+Planning of meals is one of the most effective ways you can reduce food waste and save on your food bills. It takes a little bit of time to organise but makes life a whole lot easier both when shopping, because you have your shopping list, but also at home because you know what you will be cooking.
+
+While planning out every single meal before you go shopping may not be for you, wandering the aisles of a supermarket without at least some idea of what you plan to do with your purchases will result in overspending and food being wasted every time.
+
+There are 2 main ways to plan:
+			</p>
+			<b> &nbsp;&nbsp;&nbsp;&nbsp;A meal-plan and a shopping list are two of the best tools for reducing food waste.</b><br>
+          In today’s fast-paced world, making a plan and sticking to it can be difficult. Planning your meals before you shop is one of the best ways to
+          reduce your food waste. Knowing what food you have and need stops you over-buying and makes it easier to use up food before it goes bad.
+			<br><p>
+			When making your plan, start with the foods you already have. Prioritise food that needs to be used up soon. Your plan should be based around 
+			the foods you eat –  the real you, not the ideal version of yourself. Although making a plan does make it easier to eat better, being unrealistic
+			with what foods you will actually eat can lead to even more food waste. Taking the time to plan your meals saves you time, money and stress later 
+			in the week.
+
+A
+			</p>
+			<p>
+			</p>
+	  </div>
+	  
+	  <div>
+       <!-- <h3>&nbsp;&nbsp;&nbsp;&nbsp;3. Food purchasing & prucurement </h3>	-->	
+	  </div>
+	  
+	  <footer class="srfooter">
+		<br>
+			<p>Contect: 9090909061/8080808061</p>
+			<p>E-mail: rkvagot@gmail.com</p>
+			
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>							   
+                        </ul>
+						<br>
+                       
+		</footer>
+
+</body>
+</html>

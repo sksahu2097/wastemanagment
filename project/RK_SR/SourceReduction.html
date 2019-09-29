@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Waste food management system </title>
+     <link rel="stylesheet" href="master.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="jquery.vide.js"></script>
+	 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	  
+	 
+</head>
+<body >
+        <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                       <!-- <h1>Waste food management system</h1>-->
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+						<span class="bg bg6 hide"></span>
+
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                            <ul>
+                                <li class="menu-item-1">
+                                    <span id="order">01. </span>
+                                    <span id="menu">&nbsp;Home /</span>
+                                    <span id="tag">intro</span>
+                                </li>
+                                <li class="menu-item-2">
+                                    <span id="order">02. </span>
+                                    <span id="menu">&nbsp;SourceReduction /</span>
+                                    <span id="tag"></span>
+                                </li>
+                                <li class="menu-item-3">
+                                    <span id="order">03. </span>
+                                    <span id="menu">&nbsp;Zero Waste/</span>
+                                    <span id="tag">Reduce Waste</span>
+                                </li>
+                                <li class="menu-item-4">
+                                    <span id="order">04. </span>
+                                    <span id="menu">&nbsp;Product/</span>
+                                    <span id="tag"></span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="media">
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+							   
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+			
+ 	
+      </div>
+	 
+	 
+	  
+	 
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+			$(".menu-item-6").hover(function() {
+                  $(".bg6").fadeIn(800);
+            }, function() {
+                  $(".bg6").fadeOut(800);
+                  window.location.replace("ourTeamPage/index.html");
+
+            })
+             
+             $(".menu-item-1").click(function(){
+                                     
+                                     window.location.assign("../main.html");
+                                     });
+             
+             $(".menu-item-2").click(function(){
+                                     
+                                     window.location.assign("SourceReduction.html");
+                                     });
+             $(".menu-item-3").click(function(){
+                                     
+                                     window.location.assign("SR_ZeroWasteLifestyle.html");
+                                     });
+             $(".menu-item-4").click(function(){
+                                     
+                                     window.location.assign("SR_Product.html");
+                                     });
+             
+             
+      })
+      
+    
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "50%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 6, {
+            width: "60%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+
+      </script>
+	  
+	  	<script type="text/javascript">
+                
+                var imageSources = ["wf011.jpg", "wf002.png",  "wf003.jpg","wf004.jpg"]
+                
+                var index = 0;
+                setInterval (function(){
+                             if (index === imageSources.length) {
+                             index = 0;
+                             }
+                             document.getElementById("imageAuto").src = imageSources[index];
+                             index++;
+                             } , 2000);
+                             
+                             history.pushState(null, null, location.href);
+                             window.onpopstate = function () {
+                                 history.go(1);
+                             };
+        
+       
+        
+            </script>
+      
+	  
+	  <div class="sr_hrader">
+	  <h1 align="right">&nbsp;&nbsp;&nbsp Source Reduction:</h1>
+      </div>
+	  <br/><br/><br/><br/><br/><br/>
+<frame >
+      <div class="info1">
+	  
+	     <h2 style="color:#212F3C">&nbsp;&nbsp;&nbsp Introduction:</h2>
+		 <p>&nbsp;&nbsp;
+		 Everyone creates wasted food, but it is just as simple to not create it. 
+		 Both businesses and individuals can learn to effectively prevent the flow of wasted food by taking simple steps such as making grocery lists,
+		 inventorying supplies, nd buying less.
+		 </p>
+		 <br>   
+		</div>
+		<div class ="infoimg">
+            <img id="imageAuto" src="wf011.jpg">
+		
+		<!--<img id="img1"  src="srh2.png" height="250" width="400">
+		 <img id="img2" src="srh3.jpg" height="250" width="400">-->
+	  </div>
+		
+		<div class="c2">
+			<h2 style="color:#212F3C">&nbsp;&nbsp;&nbsp;How to prevent wasted food through source Reduction</h2>
+			<p>&nbsp;&nbsp;&nbsp;Everyone creates wasted food, but it is just as simple to not create it. Both businesses 
+			and individuals can learn to effectively prevent the flow of wasted food by
+			taking simple steps such as making grocery lists, inventorying supplies, and buying less.</p>
+		</div>
+		
+		<br><br>
+		
+		
+			<div class="info2">
+				
+				<video width="520" height="240" align="right" style="float: right"  controls >
+					<source src="sr_v001.mp4" type="video/mp4">
+				</video>
+				
+				<h2 style="color:#212F3C">&nbsp;&nbsp;&nbsp; Benefits</h2>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Prevent pollution related to food production, such as fertilizers and pesticides, and save energy associated with growing, preparing, and transporting food.       
+				</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Reduce methane emissions from landfills.
+				</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Save money by buying only what is needed and by avoiding disposal costs.
+				</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Save labor costs through more efficient handling, preparation, and storage of food that will actually be used.</p>
+				</p>
+			
+	
+				
+			</div>
+		<br><br><br><br><br><br><br><br><br>
+		<div class="info3">
+		<h2 style="color:#212F3C">&nbsp;&nbsp;&nbsp; Success Stories</h2>
+			<p>&nbsp;&nbsp;&nbsp; Disclaimer of Endorsement:sReference herein to any specific commercial products, process, or service by trade name,
+			trademark, manufacturer,or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United
+			States Government. The views and  opinions of authors  expressed  herein do not necessarily state  or reflect  those of the United States 
+			Government, and shall not be used for advertising or product endorsement purposes.
+			</p>
+			
+			<h3 style="color:#283747">&nbsp;&nbsp;&nbsp; Quicken Loans</h3>
+			<p>&nbsp;&nbsp;&nbsp; Quicken Loans Arena in Cleveland, Ohio implemented a successful food scrap recovery program in conjunction with other nearby
+			venues such as Browns Stadium, Cleveland Metroparks Zoo, and Progressive Field. By tracking their kitchen waste daily, they managed 
+			to reduce their monthly food composted from an average of 3.5 tons down to an average of 1.5 tons. Quicken Loans Arena also composted over 
+			30 tons of food 2011.
+			</p>
+
+
+            <h3 style="color:#283747">&nbsp;&nbsp;&nbsp;University of Texas at Austin</h3>
+			<p>&nbsp;&nbsp;&nbsp;University of Texas at Austin audited plate waste during lunch and dinner for five days in Spring 2008. They found students leaving an average
+			of 5.7 ounces of edible food on their plates. Food service staff worked in the front of house to engage the students with signage and by
+			visualizing their daily waste with symbolic trash bins. Taste testing also allowed the students to sample menu items before taking the dish.
+			This required coordination with the back of the house, where staff were also trained on portion control and tracking of pre and post consumer waste.
+			In Fall 2008, another plate audit was conducted- this time showing only 3.9 ounces of wasted food that was edible. Then by going tray-less, 
+			the amount of food wasted went down again in Fall 2009 for a total 48 percent reduction.
+			</p>
+			
+			<h3 style="color:#283747">&nbsp;&nbsp;&nbsp;Hannaford Supermarkets</h3>
+			<p>&nbsp;&nbsp;&nbsp;Hannaford Supermarkets is a full service grocer with 179 stores in the New England region. As a part of their commitment to sustainability
+			and providing the best food to their customers, they implemented wasted food prevention strategies to reduce the amount of surplus food generated.
+			Strategies include fresh truck deliveries every day instead of forecasting out orders and a computer-assisted ordering to order appropriately
+			based on inventory and sales predictions.
+			</p>
+
+			
+
+		</div>
+</frame>		
+		<br><br><br><br><br><br>
+		<footer class="srfooter">
+		<br><br>
+			<p>Contect: 9090909061/8080808061</p> <p> E-mail: rkvagot@gmail.com</p>
+			
+			
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+													   
+                        </ul>
+						<br>
+             
+		</footer>
+
+</body>
+</html>

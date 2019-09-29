@@ -1,0 +1,268 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Waste food management system </title>
+     <link rel="stylesheet" href="SR_master_style.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="jquery.vide.js"></script>
+	 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	  
+	 
+</head>
+<body >
+        <div class="wrapper">
+
+            <div class="outer-content">
+                  <div class="title">
+                       <!-- <h1>Waste food management system</h1>-->
+                  </div>
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+						<span class="bg bg6 hide"></span>
+
+
+                  </div>
+
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                  
+                                    <id="menu">&nbsp;Home </span>										
+                                  
+                              </li>
+							  
+							  <li class="menu-item-2">
+                                  
+                                    <id="menu">&nbsp;Source Reduction</span>										
+                                  
+                              </li>
+							  							   
+                              <li class="menu-item-3">
+                                  
+                                    <span id="menu">&nbsp;Zero Waste Lifestyle</span>
+                                  
+                              </li>
+                              <li class="menu-item-4">
+                                  
+                                    <span id="menu">&nbsp;Product</span>
+                                  
+                              </li>
+                             
+                              <li class="menu-item-5">
+                                   
+                                    <span id="menu">&nbsp;Contact us </span>
+                                  
+                              </li>
+							  
+									
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+							   
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+			
+ 	
+      </div>
+	 
+	 
+	  
+	 
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+                  window.location.replace("SourceReduction.html");
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+			$(".menu-item-6").hover(function() {
+                  $(".bg6").fadeIn(800);
+            }, function() {
+                  $(".bg6").fadeOut(800);
+                  window.location.replace("ourTeamPage/index.html");
+
+            })
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "50%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 6, {
+            width: "60%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+	  
+	</script>
+	
+	  <script>
+                    
+                    function disableClick(){
+                        document.onmousedown=function(event){
+                            if (event.button == 2) {
+                                alert('Right Click Message');
+                                location.replace('index.html');
+                                return false;
+                            }
+                        }
+                    }
+                    
+                </script>
+              <style>
+			   div#gallery{
+                
+                margin:10px 50px;
+                z-index:1;
+                
+                
+            }
+            
+            div#gallery>a>img{
+                
+                width:230px;
+                height:100px;
+                padding:5px;
+                filter:grayscale(100%);
+                transition:ls;
+                margin-top:100px;
+                margin-left:20px;
+                
+                
+                
+                
+                
+            }
+            div#gallery>a>img:hover{
+                
+                filter:grayscale(0);
+                transform:scale(2);
+                
+                
+            }
+           
+			  </style>
+			  
+			<!--  <div class="sr_hrader">
+				<h1 align="right">&nbsp;&nbsp;&nbsp X Ride Gallery:</h1>
+			 </div>
+			-->
+	
+	 <div id="gallery">
+            
+                     <a href="/gallery/ARMY/mydestination/IA__1.jpg" data-lightbox="mygallery" data-title="OPERATION VIJAY"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA__1.jpg"></a>
+                        <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_02.jpg" data-lightbox="mygallery" data-title="Indian Militray Academy"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_02.jpg"></a>
+                         <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_2.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_2.jpg"></a>
+                          <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_Gurkha_rifles.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_Gurkha_rifles.jpg"></a>
+                           <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_05.jpg" data-lightbox="mygallery" data-title="para SF"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_05.jpg"></a>
+                            <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_06.jpg" data-lightbox="mygallery" data-title="IMA POP"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_06.jpg"></a>
+                             <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-33.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-33.jpg"></a>
+                              <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-28.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-28.jpg"></a>
+                               <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-25.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-25.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_Amar-Jawan.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_Amar-Jawan.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_BATTEL_STUDY.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_BATTEL_STUDY.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_INSAS_Rifle.jpg" data-lightbox="mygallery" data-title="INSAS"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_INSAS_Rifle.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_M4_Com.jpg" data-lightbox="mygallery" data-title="M4 RIFLE"><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_M4_Com.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_M4-COLT-COM.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA_M4-COLT-COM.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-22.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-22.jpg"></a>
+                                  <a href="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-12.jpg" data-lightbox="mygallery" data-title=""><img src="/Users/santoshsahu/mca/trimester_2/project/practice/framePractice/navigationBar/gallery/ARMY/mydestination/IA-12.jpg"></a>
+                                                                                
+                        
+                    </div>
+   
+	
+	  <!--
+	  <footer class="srfooter">
+		<br>
+			<p>Contect: 9090909061/8080808061</p>
+			<p>E-mail: rkvagot@gmail.com</p>
+			
+                        <ul>  
+						      <li><ion-icon name="logo-apple"></ion-icon></li>
+							  <li><ion-icon name="logo-google"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+							  <li><ion-icon name="logo-pinterest"></ion-icon></li>
+							 
+							   
+                        </ul>
+						<br>
+                       
+		</footer>
+-->
+</body>
+</html>

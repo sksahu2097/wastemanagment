@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Sub-sub menu 1.2</title>
+      <link rel="stylesheet" href="Recycling Knowledge style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+</head>
+<body>
+      <div class="slide active">
+            <div class="card">
+                  <div class="card-img" id="img10"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling  Knowledge</p>
+                        <h2 class="card-header">FIVE TOP TIPS TO REDUCE CONTAMINATION</h2>
+                        <p class="card-para">Putting the right stuff in the right bin is important. The wrong stuff is called contamination and when contaminated loads of recycling are found, it can potentially result in the whole lorry full being sent to landfill.<br><br>
+											</p>
+                  
+				  <a href="Reycling Knowledge.html">Back<ion-icon name="arrow-round-forward"></ion-icon></a>
+
+                  </div>
+            </div>
+      </div>
+      <div class="slide">
+            <div class="card">
+                  <div class="card-img" id="img11"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling Knowledge</p>
+                        <h2 class="card-header">Top tips to help reduce contamination in your bin</h2>
+                        <p class="card-para">Look out for recycling labels on packaging to help identify whether it is recyclable or not <br>
+											 Leave metal caps and lids on glass jars and bottles<br>
+											 Empty and rinse all containers<br>
+											 Don't forget to recycle items from all rooms in the house such as shampoo bottles from the bathroom<br>
+											 If in doubt, check before you chuck using the Recycling Locator.<br>
+									
+									
+									</p>
+                  
+                  </div>
+            </div>
+      </div>
+      <div class="slide">
+            <div class="card">
+                  <div class="card-img" id="img12"></div>
+                  <div class="card-content">
+                        <p class="card-theme">Recycling  Knowledges</p>
+                        <h2 class="card-header">Common myths - unfortunately you cannot recycle these items</h2>
+                        <p class="card-para">Glass cookware, Pyrex and ovenware, drinking glasses and ceramics – although it may sound unusual, these items cannot be collected for recycling from your home. Use the Recycling Locator to find your nearest recycling facility for these items.<br>
+										Cutlery, crockery, pots and pans cannot be recycled at home but can be taken to your local recycling facility.<br>
+										Nappies cannot be recycled. Many people think they can be recycled as they are made from paper pulp but they can’t!<br>
+										Empty deodorant aerosols and hairspray - ensure empty and remove plastic caps (recycle with plastics)</p>
+                  
+				  
+				  <a href="Reycling Knowledge.html">Back<ion-icon name="arrow-round-forward"></ion-icon></a>
+                  </div>
+            </div>
+      </div>
+	  
+	  
+	  
+	  
+	  
+	  
+      <div class="prevnext">
+            <button class="pn-btn" id="prev"></button>
+            <button class="pn-btn" id="next"></button>
+      </div>
+      <script type="text/javascript">
+
+      var $activeSlide = $('.active'),
+      $homeSlide = $(".slide"),
+      $slideNavPrev = $("#prev"),
+      $slideNavNext = $("#next");
+
+      function init() {
+            TweenMax.set($homeSlide.not($activeSlide), {autoAlpha: 0});
+            TweenMax.set($slideNavPrev, {autoAlpha: 0.2});
+      }
+
+      init();
+
+      function goToNextSlide(slideOut, slideIn, slideInAll) {
+            var t1 = new TimelineLite(),
+            slideOutContent = slideOut.find('.card-content'),
+            slideInContent = slideIn.find('.card-content'),
+            slideOutImg = slideOut.find('.card-img'),
+            slideInImg = slideIn.find('.card-img'),
+            index = slideIn.index(),
+            size = $homeSlide.length;
+            console.log(index);
+
+            if(slideIn.length !== 0) {
+            t1
+            .set(slideIn, {autoAlpha: 1, className: '+=active'})
+            .set(slideOut, {className: '-=active'})
+            .to(slideOutContent, 0.65, {y: "+=40px", ease: Power3.easeInOut}, 0)
+            .to(slideOutImg, 0.65, {backgroundPosition :'bottom', ease: Power3.easeInOut}, 0)
+            .to(slideInAll, 1, {y: "-=100%", ease: Power3.easeInOut}, 0)
+            .fromTo(slideInContent, 0.65, {y: '-=40px'}, {y : 0, ease: Power3.easeInOut}, "-=0.7")
+            .fromTo(slideInImg, 0.65, {backgroundPosition: 'top'}, {backgroundPosition: 'bottom', ease: Power3.easeInOut}, '-=0.7')
+            }
+
+            TweenMax.set($slideNavPrev, {autoAlpha: 1});
+
+            if(index === size - 1){
+                  TweenMax.to($slideNavNext, 0.3, {autoAlpha: 0.2, ease:Linear.easeNone});
+            }
+      };
+
+      $slideNavNext.click(function(e) {
+            e.preventDefault();
+
+            var slideOut = $('.slide.active'),
+            slideIn = $('.slide.active').next('.slide'),
+            slideInAll = $('.slide');
+
+            goToNextSlide(slideOut, slideIn, slideInAll);
+
+      });
+
+      function goToPrevSlide(slideOut, slideIn, slideInAll) {
+            var t1 = new TimelineLite(),
+            slideOutContent = slideOut.find('.card-content'),
+            slideInContent = slideIn.find('.card-content'),
+            slideOutImg = slideOut.find('.card-img'),
+            slideInImg = slideIn.find('.card-img'),
+            index = slideIn.index(),
+            size = $homeSlide.length;
+
+            if(slideIn.length !== 0) {
+            t1
+            .set(slideIn, {autoAlpha: 1, className: '+=active'})
+            .set(slideOut, {className: '-=active'})
+            .to(slideOutContent, 0.65, {y: "-=40px", ease: Power3.easeInOut}, 0)
+            .to(slideOutImg, 0.65, {backgroundPosition :'top', ease: Power3.easeInOut}, 0)
+            .to(slideInAll, 1, {y: "+=100%", ease: Power3.easeInOut}, 0)
+            .fromTo(slideInContent, 0.65, {y: '+=40px'}, {y : 0, ease: Power3.easeInOut}, "-=0.7")
+            .fromTo(slideInImg, 0.65, {backgroundPosition: 'bottom'}, {backgroundPosition: 'top', ease: Power3.easeInOut}, '-=0.7')
+            }
+
+            TweenMax.set($slideNavPrev, {autoAlpha: 1});
+
+            if(index === 0){
+                  TweenMax.to($slideNavPrev, 0.3, {autoAlpha: 0.2, ease:Linear.easeNone});
+            }
+      };
+
+      $slideNavPrev.click(function(e) {
+            e.preventDefault();
+
+            var slideOut = $('.slide.active'),
+            slideIn = $('.slide.active').prev('.slide'),
+            slideInAll = $('.slide');
+
+            goToPrevSlide(slideOut, slideIn, slideInAll);
+      
+      });
+
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Food Donation</title>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+      
+      <script type="text/javascript">
+      
+      function disableClick(){
+          document.onmousedown=function(event){
+              if (event.button == 2) {
+                  alert('This Function Not Allowed');
+                  return false;
+              }
+          }
+      }
+      
+      
+      function getUserName(){
+          
+          if(window.XMLHttpRequest){
+              
+              var xmlhttp=new XMLHttpRequest();
+              
+          }else{
+              
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              
+          }
+          
+          xmlhttp.open("GET","getUserName.php",false);
+          
+          xmlhttp.onreadystatechange=function(){
+              
+              if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                  
+                  output=xmlhttp.responseText;
+                  document.getElementById("user").value=""+output.toUpperCase();
+                  disableClick();
+                  
+              }
+              
+          }
+          
+          xmlhttp.send();
+          
+          
+      }
+      
+      
+      </script>
+      
+      
+      
+      
+</head>
+<body onload="getUserName();">
+      <div class="wrapper">
+
+            <div class="outer-content">
+
+
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+                        
+
+                  </div>
+                  <input type="text" id="user" readonly="readonly" size="15" style="margin-left:1180px;"/>
+<center>
+    
+    <div id="riderData" style="display:none;" >
+
+
+    </div>
+    
+<div id="login1" style="display:none;" >
+    <h1>Add Food Item</h1>
+    
+    <table id="fooddonation">
+        <tbody>
+            <tr>
+                
+                <th>Food Categories</th>
+                <th>Quantity(No.Of Person)</th>
+                <th>Food Expiry</th>
+                <th>Food Type</th>
+                <th></th>
+                
+            </tr>
+            
+            <tr>
+                
+                <td><select name="name">
+                    
+                    <option value="nonveg">NON VEG</option>
+                    <option value="veg">VEG</option>
+                    
+                </select></td>
+                
+                <td><input type="text" name="name"></td>
+                <td><input type="text" name="name"></td>
+                <td><select  name="name">
+                    
+                    <option value="baked">BAKED</option>
+                    <option value="nonbaked">NON BAKED</option>
+                    
+                </select></td>
+                
+                <td><button class="remove">-</button></td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+    
+    <button id="addRow">+ ADD PUNYA</button>
+    <button id="getValue"> SUBMIT</button>
+    
+    
+</div>
+
+</center>
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                    <span id="order">01. </span>
+                                    <span id="menu">&nbsp;Donate /</span>
+                                    <span id="tag">दान करना</span>
+                              </li>
+                              <li class="menu-item-2">
+                                    <span id="order">02. </span>
+                                    <span id="menu">&nbsp;Previous Order/</span>
+                                    <span id="tag">History</span>
+                              </li>
+                              <li class="menu-item-3">
+                                    <span id="order">03. </span>
+                                    <span id="menu">&nbsp;Search Rider /</span>
+                                    <span id="tag">Savari</span>
+                              </li>
+                              <li class="menu-item-4">
+                                    <span id="order">04. </span>
+                                    <span id="menu">&nbsp; Contact US/</span>
+                                    <span id="tag">Feedback</span>
+                              </li>
+                              <li class="menu-item-5">
+                                    <span id="order">05. </span>
+                                    <span id="menu">&nbsp;Logout /</span>
+                                    <span id="tag">See you soon</span>
+                              </li>
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      
+      
+      
+      
+
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            $(".menu-item-5").hover(function() {
+                  $(".bg5").fadeIn(800);
+            }, function() {
+                  $(".bg5").fadeOut(800);
+            })
+             $(".menu-item-1").click(function(){
+                                     
+                                     setTimeout(
+                                                function(){
+                                                
+                                                login1.style.display='block';
+                                                
+                                                }, 4200);
+                                     
+                                     });
+             
+             
+             $(".menu-item-2").click(function(){
+                                     
+                                     setTimeout(
+                                                function(){
+                                                
+                                                $.ajax({url: "orderHistory.php", success: function(result){
+                                                       $("#riderData").html(result);
+                                                       riderData.style.display='block';
+                                                       }});
+                                                
+                                                }, 4200);
+                                     });
+             
+             $(".menu-item-3").click(function(){
+                                     
+                                     setTimeout(
+                                                function(){
+                                                
+                                                $.ajax({url: "searchRider.php", success: function(result){
+                                                       $("#riderData").html(result);
+                                                       riderData.style.display='block';
+                                                       }});
+                                                
+                                                }, 4200);
+                                     });
+             
+             $(".menu-item-4").click(function(){
+                                     
+                                     window.location.assign("contact/contact.html");
+                                     
+                                     });
+             
+             $(".menu-item-5").click(function(){
+                                     
+                                     window.location.assign("../donorLogin.html");
+                                     
+                                     });
+             
+             
+      })
+
+      var t1 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "45%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 2, {
+            width: "45%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+      
+      $(".toggle-btn").click(function(){
+                             
+                             login1.style.display='none';
+                             riderData.style.display='none';
+                             
+                             });
+      
+
+      </script>
+      
+      
+      
+      <script>
+          
+          var values = [];
+          var svalues = [];
+          
+          function sendData(){
+              
+              window.location="http://localhost:8000/donor.php?values="+values+"&svalues="+svalues;
+              
+              
+          }
+          
+          var html='<tr><td><select name="name"><option value="nonveg">NON VEG</option><option value="veg">VEG</option></select></td><td><input type="text" name="name"></td><td><input type="text" name="name"></td><td><select  name="name"><option value="baked">BAKED</option><option value="nonbaked">NON BAKED</option></select></td><td><button class="remove">-</button></td></tr>';
+          
+          $(function(){
+            
+            $('tbody').sortable();
+            
+            $('#addRow').click(function(){
+                               
+                               $('tbody').append(html);
+                               
+                               });
+            
+            $(document).on('click','.remove',function(){
+                           
+                           $(this).parents('tr').remove();
+                           
+                           });
+            $('#getValue').click(function(){
+                                 
+                                 
+                                 $('input[name="name"]').each(function(i,elem){
+                                                             
+                                                              values.push($(elem).val());
+                                                             
+                                                              });
+                                 $('select[name="name"]').each(function(i,elem){
+                                                              
+                                                              svalues.push($(elem).val());
+                                                              
+                                                              });
+                                 
+                                 //alert(values.join(','));
+                                 //alert(svalues.join(','));
+                                 sendData();
+                                 
+                                 });
+            
+            });
+          
+       </script>
+      
+</body>
+</html>

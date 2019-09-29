@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Customer Dashboard</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+      
+      <script type="text/javascript">
+          
+          
+          
+          function dataSave(){
+              
+              var area=document.getElementById("area").value;
+              var dist=document.getElementById("dist").value;
+              var state=document.getElementById("state").value;
+              var landmark=document.getElementById("landmark").value;
+              var pincode=document.getElementById("pincode").value;
+              var darea=document.getElementById("darea").value;
+              var ddist=document.getElementById("ddist").value;
+              var dstate=document.getElementById("dstate").value;
+              var dlandmark=document.getElementById("dlandmark").value;
+              var dpincode=document.getElementById("dpincode").value;
+              
+              
+              if(window.XMLHttpRequest){
+                  
+                  var xmlhttp=new XMLHttpRequest();
+                  
+              }else{
+                  
+                  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  
+              }
+              
+              xmlhttp.open("GET","riderPage.php?area="+area+"&dist="+dist+"&state="+state+"&landmark="+landmark+"&pincode="+pincode+"&darea="+darea+"&ddist="+ddist+"&dstate="+dstate+"&dlandmark="+dlandmark+"&dpincode="+dpincode,false);
+              
+              xmlhttp.onreadystatechange=function(){
+                  
+                  if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                      
+                      window.location.assign("riderDashboard.html");
+                      
+                  }
+                  
+              }
+              
+              xmlhttp.send();
+              
+              
+              
+              
+          }
+         
+      
+      function getUserName(){
+          
+          if(window.XMLHttpRequest){
+              
+              var xmlhttp=new XMLHttpRequest();
+              
+          }else{
+              
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              
+          }
+          
+          xmlhttp.open("GET","getUserName.php",false);
+          
+          xmlhttp.onreadystatechange=function(){
+              
+              if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                  
+                  output=xmlhttp.responseText;
+                  document.getElementById("user").value=""+output.toUpperCase();
+                  disableClick();
+                  
+              }
+              
+          }
+          
+          xmlhttp.send();
+          
+          
+      }
+      
+      
+      
+      function disableClick(){
+          document.onmousedown=function(event){
+              if (event.button == 2) {
+                  alert('Right Click Message');
+                  return false;
+              }
+          }
+      }
+      </script>
+      
+      
+      
+      
+</head>
+<body onload="getUserName();">
+      <div class="wrapper">
+            <div class="outer-content">
+                
+            </div>
+
+            <div class="menu-strip">
+                  <div class="toggle-btn">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+            </div>
+
+
+
+            <div class="menu">
+
+                  <div class="images">
+                        <span class="bg bg1 hide"></span>
+                        <span class="bg bg2 hide"></span>
+                        <span class="bg bg3 hide"></span>
+                        <span class="bg bg4 hide"></span>
+                        <span class="bg bg5 hide"></span>
+
+                  </div>
+                  <input type="text" id="user" readonly="readonly" size="15" style="margin-left:1180px;"/>
+
+<center>
+    
+    <div id="riderData" style="display:none;">
+        
+        
+        
+    </div>
+    
+    <div id="rideDetails" style="display:none;">
+    
+    <table>
+        
+        <tr>
+            <td>Enter the starting location(area)</td>
+            <td><input type="text" id="area" placeholder="enter the area"/>
+                
+                </tr>
+        <tr>
+            <td>Enter the district</td>
+            <td><input type="text" id="dist" placeholder="Enter the district"/>
+                
+                </tr>
+        
+        <tr>
+            <td>Enter the state</td>
+            <td><input type="text" id="state" placeholder="Enter the state"/>
+                
+                </tr>
+        
+        <tr>
+            <td>Enter the landmark</td>
+            <td><input type="text" id="landmark" placeholder="Enter the landmark"/>
+                
+                </tr>
+        
+        
+        
+        <tr>
+            <td>Enter the pincode</td>
+            <td><input type="text" id="pincode" placeholder="Enter the pincode"/>
+                
+                </tr>
+        
+        
+        
+    </table>
+    </br></br></br>
+    
+    <table>
+        
+        <tr>
+            <td>Enter the destination location(area)</td>
+            <td><input type="text" id="darea" placeholder="enter the area"/>
+                
+                </tr>
+        <tr>
+            <td>Enter the district</td>
+            <td><input type="text" id="ddist" placeholder="Enter the district"/>
+                
+                </tr>
+        
+        <tr>
+            <td>Enter the state</td>
+            <td><input type="text" id="dstate" placeholder="Enter the state"/>
+                
+                </tr>
+        
+        <tr>
+            <td>Enter the landmark</td>
+            <td><input type="text" id="dlandmark" placeholder="Enter the landmark"/>
+                
+                </tr>
+        
+        
+        
+        <tr>
+            <td>Enter the pincode</td>
+            <td><input type="text" id="dpincode" placeholder="Enter the pincode"/>
+                
+                </tr>
+        
+        
+        
+    </table>
+    
+    </br></br></br>
+    <input type="button" value="enter data" style="margin-left:150px;" onclick="dataSave();"/>
+    
+</div></center>
+
+
+                  <div class="nav">
+                        <div class="menu">
+                        <ul>
+                              <li class="menu-item-1">
+                                    <span id="order">01. </span>
+                                    <span id="menu">&nbsp;Profile /</span>
+                                    <span id="tag">प्रोफ़ाइल जानकारी</span>
+                              </li>
+                              <li class="menu-item-2">
+                                    <span id="order">02. </span>
+                                    <span id="menu">&nbsp;RideInfo /</span>
+                                    <span id="tag">सवारी की जानकारी</span>
+                              </li>
+                              <li class="menu-item-3">
+                                    <span id="order">03. </span>
+                                    <span id="menu">&nbsp;SearchRider/</span>
+                                    <span id="tag">सवारी खोजें</span>
+                              </li>
+                              
+                              <li class="menu-item-4">
+                                  <span id="order">04. </span>
+                                  <span id="menu">&nbsp;ContactUS /</span>
+                                  <span id="tag">Feedback</span>
+                              </li>
+
+                              
+                              <li class="menu-item-5">
+                                    <span id="order">05. </span>
+                                    <span id="menu">&nbsp;Logout /</span>
+                                    <span id="tag">लोग आउट</span>
+                              </li>
+                              
+                              
+                        </ul>
+                        </div>
+                        <div class="media">
+                        <ul>
+                              <li><ion-icon name="logo-facebook"></ion-icon></li>
+                              <li><ion-icon name="logo-instagram"></ion-icon></li>
+                              <li><ion-icon name="logo-twitter"></ion-icon></li>
+                              <li><ion-icon name="logo-youtube"></ion-icon></li>
+                        </ul>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+      
+      
+      
+      
+
+      <script type="text/javascript">
+
+      jQuery(function() {
+            $(".menu-item-1").hover(function() {
+                  $(".bg1").fadeIn(800);
+            }, function() {
+                  $(".bg1").fadeOut(800);
+            })
+            $(".menu-item-2").hover(function() {
+                  $(".bg2").fadeIn(800);
+            }, function() {
+                  $(".bg2").fadeOut(800);
+            })
+            $(".menu-item-3").hover(function() {
+                  $(".bg3").fadeIn(800);
+            }, function() {
+                  $(".bg3").fadeOut(800);
+            })
+            $(".menu-item-4").hover(function() {
+                  $(".bg4").fadeIn(800);
+            }, function() {
+                  $(".bg4").fadeOut(800);
+            })
+            
+
+             $(".menu-item-1").click(function(){
+                                     setTimeout(
+                                                function(){
+                                                
+                                      $.ajax({url: "getProfileInformation.php", success: function(result){
+                                             $("#riderData").html(result);
+                                      rideDetails.style.display='none';
+                                      riderData.style.display='block';
+                                      }});
+                                                }, 4200);
+
+                               });
+             $(".menu-item-2").click(function(){
+                                     
+                                     setTimeout(
+                                                function(){
+                                                
+                                                riderData.style.display='none';
+                                                rideDetails.style.display='block';
+                                                
+                                                }, 4200);
+                                     
+                                     });
+             
+             $(".menu-item-3").click(function(){
+                                     
+                                     setTimeout(
+                                                function(){
+
+                                     $.ajax({url: "searchRider.php", success: function(result){
+                                            $("#riderData").html(result);
+                                            rideDetails.style.display='none';
+                                            riderData.style.display='block';
+                                            }});
+                                                
+                                                }, 4200);
+                                     });
+             
+             $(".menu-item-4").click(function(){
+                                   
+                                   window.location.assign("../contact/contact.html");
+                                   
+                                   });
+             
+             
+             $(".menu-item-5").click(function(){
+                                     $.ajax({url: "logout.php", success: function(result){
+                                            window.location.assign("../login.html");
+                                            }});
+                                     });
+             
+             })
+
+      var t1 = new TimelineMax({paused: true});
+      var t2 = new TimelineMax({paused: true});
+
+      t1.to(".outer-content .title", 1, {
+            opacity: 0
+      });
+
+      t1.to(".menu", 2, {
+            width: "45%",
+            ease: Expo.easeInOut
+      }, "-=1");
+
+      t1.staggerFrom(".menu ul li", 2, {y: 20 , opacity: 0, ease: Expo.easeInOut}, 0.1);
+
+      t1.to(".images", 2, {
+            width: "45%",
+            ease: Expo.easeInOut,
+            delay: -2,
+      },"-=1");
+      
+      t2.to("#rideDetails", 2, {
+            width: "45%",
+            ease: Expo.easeOut
+            }, "3");
+
+      t1.reverse();
+      $(document).on("click", ".toggle-btn", function() {
+            t1.reversed(!t1.reversed());
+                     t2.play();
+      });
+      $(document).on("click", "#menu", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(".toggle-btn").click(function(){
+                              
+                              riderData.style.display='none';
+                              rideDetails.style.display='none';
+                              });
+
+
+
+      </script>
+</body>
+</html>
